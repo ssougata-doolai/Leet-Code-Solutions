@@ -1,11 +1,23 @@
 class Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
-        for i in range(len(arr)):
-            if arr[i] <= k:
-                k += 1
+        min_i = 0
+        max_i = len(arr) - 1
+        while min_i <= max_i:
+            mid = (min_i + max_i) // 2
+            if (arr[mid] - (mid + 1)) < k:
+                min_i = mid + 1
             else:
-                break
-        return k
+                max_i = mid - 1
+        print(f"max_i: {arr[max_i]}, i: {max_i}")
+        return arr[max_i] + (k - (arr[max_i] - (max_i + 1)))
+
+        # Brute force
+        # for i in range(len(arr)):
+        #     if arr[i] <= k:
+        #         k += 1
+        #     else:
+        #         break
+        # return k
 
         # def binary_search(arr, k):
         #     min_n = 0
