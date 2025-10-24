@@ -2,7 +2,7 @@ class Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
         def binary_search(arr, k):
             min_n = 0
-            max_n = len(arr)
+            max_n = len(arr) - 1
             while min_n <= max_n:
                 mid = (min_n + max_n) // 2
                 if arr[mid] == k:
@@ -25,7 +25,7 @@ class Solution:
         count = 0
         while count < k:
             num += 1
-            if linear_search(arr, num) == False:
+            if binary_search(arr, num) == False:
                 count += 1
             
         return num
