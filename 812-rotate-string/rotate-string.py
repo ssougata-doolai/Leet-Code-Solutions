@@ -6,9 +6,11 @@ class Solution:
         if len_s != len_goal:
             return False
 
-        for i in range(len_s):
-            s = s[1:] + s[0]
-            if s == goal:
-                return True
+        return s in (goal + goal)
+        
+        # for i in range(len_s):
+        #     s = s[1:] + s[0]
+        #     if s == goal:
+        #         return True
 
-        return False 
+        # return False 
