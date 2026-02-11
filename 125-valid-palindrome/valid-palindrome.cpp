@@ -3,7 +3,6 @@ public:
     bool isPalindrome(string s) {
         int i = 0, j = s.size() - 1;
         while(i < j) {
-            cout<< i << " : " << j << endl;
             if(!isalnum(s[i])) {
                 i++;
                 continue;
