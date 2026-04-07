@@ -5,12 +5,9 @@ public:
 
         if(s.size() != t.size()) return false;
 
-        for(auto ch : s) {
-            freq[ch - 'a'] += 1;
-        }
-        
-        for(auto ch : t) {
-            freq[ch - 'a'] -= 1;
+        for(int i = 0; i < s.size(); i++) {
+            freq[s[i] - 'a'] += 1;
+            freq[t[i] - 'a'] -= 1;
         }
 
         for(auto item : freq) {
